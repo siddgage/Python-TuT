@@ -26,7 +26,7 @@ def play_game():
         print("\n********************************************************************\n")
         ch = input("1.Show Dashboard for current team\n2.Show Dashboard for all teams\n3.Throw the ball\n4.Exit\nEnter Your Choice: ")
         print("\n********************************************************************\n")
-# Switch Case 
+    # Switch Case 
         if ch == "1":
             display_board_for_current_player()
         elif ch == "2":
@@ -38,7 +38,7 @@ def play_game():
         else:
             print("Wrong Choice, try again...")   
 
-# Display For first time since list is empty
+# Display For all team
 def display_board():
     for i in range(no_of_teams):
         print()

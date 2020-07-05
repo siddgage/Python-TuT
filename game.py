@@ -93,7 +93,7 @@ def can_continue():
 
 def check_current_player():
     global current_team, teams, Score, run
-
+    
     winner = teams[1] 
     if check_over() and can_continue() == 1:
         pass
@@ -106,6 +106,7 @@ def check_current_player():
                 else: continue
         print(f"*********\n\nTeam {winner} Wins the match. Congrats\n\n*********")
         sys.exit("Thanks for playing...\n")
+        
     elif check_over() and can_continue() == -1:
         current_team += 1
         Score.append(run)

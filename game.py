@@ -124,16 +124,19 @@ def check_current_team():
 
 def check_winner():
     global Score, teams, current_team
-    #check if the last team is playing
+    #winner checker
+    winner_score = 0
     winner = teams[0] 
+    #check if the last team is playing
     if teams[current_team] == len(teams)-1:
         for i in  range(len(teams)-1):
-            if Score[i+1] >= winner:
+            if Score[i+1] >= winner_score:
+                winner_score = Score[i+1]
                 winner = teams[i+1]
                 # if Score[i+1] == Score[i]:
                 #     print(f"Tied Between {teams[i]} and {teams[i+11]} ")
         display_board()
-        print(f"*********\n\nTeam {winner +1} Wins the match. Congrats\n\n*********")
+        print(f"*********\n\nTeam {winner +1} Wins the match with the score of{winner_score}. Congrats\n\n*********")
         sys.exit("Thanks for playing...\n")
     else: print(f"Team {current_team+1} chance is over")
 

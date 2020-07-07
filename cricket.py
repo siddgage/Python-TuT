@@ -9,7 +9,7 @@ index = 0
 
 # Score 
 Score = []
-Run_Tracker = [current_team][index]
+Run_Tracker = []
 run = 0
 Run_Scored = 0
 Run_Tracker = []
@@ -20,7 +20,6 @@ No_of_Wickets_Remaining = []
 
 #Over
 Over = []
-No_of_Balls = 0
 No_of_Balls_for_team = []
 
 # Main Function
@@ -80,13 +79,13 @@ def display_run_tracker_for_current_team():
             
 # Game Start here
 def ball_thrown():
-    global Over,Run_Scored,current_team, No_of_Balls
+    global Over,Run_Scored,current_team, No_of_Balls_for_team
     
     #Randmonly Generate a Value Betwwen 0 and 6 for the runs
     Run_Scored = rd.randint(0, 6)
     #Iterating Over
     Over[current_team] +=0.1
-    No_of_Balls +=1
+    No_of_Balls_for_team[current_team] +=1
 
     #checking condition
     check_run()
@@ -147,12 +146,10 @@ def check_wicket():
 
 #Check Current Player
 def check_current_team():
-    global current_team, run, No_of_Balls_for_team
-    #Set Total No of Balls Played 
-    No_of_Balls_for_team[current_team] = No_of_Balls
+    global current_team, run
 
-    check_winner()
     display_run_tracker_for_current_team()
+    check_winner()
     display_board_for_current_team()
     current_team += 1
     run = 0
@@ -178,9 +175,9 @@ def check_winner():
                     print(f"Tied Between {Teams[i+1]} and {Teams[j+1]} ")
             break
 
-        print(f"*  *  *  *  *  *  *  *  *\n\nTeam {winner +1} Wins the match with the score of {winner_score}. Congrats\n*  *  *  *  *  *  *  *  *")
+        print(f"\n\n*  *  *  *  *  *  *  *  *Team {winner +1} Wins the match with the score of {winner_score}. Congrats*  *  *  *  *  *  *  *  *\n")
         sys.exit("Thanks for playing...\n")
-    else: print(f"#  #  # TEAM {current_team+1} CHANGE OVER #  #  #")
+    else: print(f"\n#  #  # TEAM {current_team+1} CHANGE OVER #  #  #")
 
 def appendFunc():
     #  To over come index out of range

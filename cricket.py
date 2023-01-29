@@ -60,18 +60,18 @@ def select_dashboard():
 
 # Display For all team
 def display_board():
-    print("*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *")
+    print("\t\t\t\t*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *")
     for i in range(no_of_teams):
-        print(f"\t\t\t\t\t\tDashbord for team {i+1}")
-        print(f"\t\t\t\t\t\tScore is: {Score[i]} | Wicket: {Wicket[i]} | Overs: {round(Over[i],1)} | No of player remained: {No_of_Wickets_Remaining[i]}\n\n")
-    print("*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *")
+        print(f"\t\t\t\t\tDashbord for team {i+1}")
+        print(f"\t\t\t\t\tScore is: {Score[i]} | Wicket: {Wicket[i]} | Overs: {round(Over[i],1)} | No of player remained: {No_of_Wickets_Remaining[i]}\n\n")
+    print("\t\t\t\t*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *")
 
 #display for current player only
 def display_board_for_current_team():
-        print("*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * *  *  *  *  *  *  *  *  *  *  *  *  *  *  *")
-        print(f"\t\t\t\t\t\tDashbord for team {current_team+1}")
-        print(f"\t\t\t\t\t\tScore is: {Score[current_team]} | Wicket: {Wicket[current_team]} | Overs: {round(Over[current_team],1)} | No of player remained: {No_of_Wickets_Remaining[current_team]}\n")
-        print("*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  * *  *  *  *  *  *  *  *  *  *  *  *  *  *  *")
+        print("\t\t\t\t*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *")
+        print(f"\t\t\t\t\tDashbord for team {current_team+1}")
+        print(f"\t\t\t\t\tScore is: {Score[current_team]} | Wicket: {Wicket[current_team]} | Overs: {round(Over[current_team],1)} | No of player remained: {No_of_Wickets_Remaining[current_team]}\n")
+        print("\t\t\t\t*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *")
 
 def display_run_tracker_for_current_team(): 
     print(f"Run Tracker for Team {current_team +1}")
@@ -154,7 +154,7 @@ def check_current_team():
     current_team += 1
     run = 0
 
-    print(f"#  #  # TEAM CHANCE TO TEAM {current_team +1} #  #  #")
+    print(f"\t\t\t\t#  #  # TEAM CHANCE TO TEAM {current_team +1} #  #  #")
 
 def check_winner():
     global Score, Teams, current_team
@@ -175,7 +175,7 @@ def check_winner():
                     print(f"Tied Between {Teams[i+1]} and {Teams[j+1]} ")
             break
 
-        print(f"\n\n*  *  *  *  *  *  *  *  *Team {winner +1} Wins the match with the score of {winner_score}. Congrats*  *  *  *  *  *  *  *  *\n")
+        print(f"\n\n~~~~~~~~~~~~ Team {winner +1} Wins the match with the score of {winner_score}. Congrats ~~~~~~~~~~~~\n")
         sys.exit("Thanks for playing...\n")
     else: print(f"\n#  #  # TEAM {current_team+1} CHANGE OVER #  #  #")
 
@@ -195,7 +195,7 @@ def appendFunc():
 if __name__ == "__main__":
 
     no_of_teams = int(input("Enter the number of Teams: "))
-    totalOver = int(input("\nEnter the number of Overs: ")) -1
+    totalOver = int(input("\nEnter the number of Overs: "))
 
 
     appendFunc()
